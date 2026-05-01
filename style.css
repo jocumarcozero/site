@@ -8,16 +8,19 @@ body {
     background-color: #ffffff;
 }
 
+/* --- Navbar (Extremidade Inferior) --- */
 .navbar {
     background-color: #202020;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px 0;
+    align-items: stretch;
+    padding: 0;
     width: 100%;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 30px auto 0;
     border-radius: 4px;
+    overflow: hidden; 
+    height: 70px;
 }
 
 .nav-links {
@@ -26,6 +29,11 @@ body {
     gap: 45px;
     margin: 0;
     padding: 0;
+    height: 100%;
+}
+
+.nav-links li {
+    display: flex;
 }
 
 .nav-links a {
@@ -35,116 +43,119 @@ body {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    transition: font-weight 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 
-                 0 0 12px rgba(255, 255, 255, 0.5);
+    font-weight: 700;
 }
 
-/* --- Estrutura de Conteúdo --- */
-.container {
-    max-width: 800px; /* Estreitei o container principal */
-    margin: 10px auto;
-    padding: 0 30px;
-    overflow: visible;
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px; 
+    background-color: #ffffff;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.nav-links a:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Título h1 com Alinhamento Ajustado --- */
 h1 {
     text-align: center;
     font-weight: 300;
     font-size: 2.8rem;
+    margin-top: 40px;
     margin-bottom: 50px;
     color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: baseline; /* Alinha o texto e a imagem pela linha de base */
 }
 
 .title-icon {
-    height: 1em;
-    width: 1em;
-    display: inline;
-    vertical-align: middle;
-    margin: 0 -0.1em;
+    height: 0.8em; /* Ajuste para o tamanho da letra minúscula */
+    width: auto;
+    margin: em;
+    position: relative;
+    top: 7px; /* FAZ A IMAGEM DESCER para alinhar com o "Marc" */
+    vertical-align: baseline;
+    padding-right: 10px;
+    padding-left: 0px;
 }
 
-/* Alinhamento Texto | Linha | Imagem */
+/* --- Conteúdo --- */
+.container {
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 0 30px;
+}
+
 .content-wrapper {
     display: flex;
-    align-items: flex-start; /* Alinha pelo topo para podermos controlar a descida da imagem */
+    align-items: flex-start;
     gap: 0;
-    overflow: visible;
 }
 
 .text-area {
-    flex: 1; /* Dividido igualmente agora */
+    flex: 1;
     text-align: justify;
     font-size: 1.05rem;
     color: #444;
     padding-right: 25px;
-    overflow: visible;
 }
 
 .line-divider {
     width: 3px;
     background-color: #000000;
-    box-shadow: 3px 0 8px rgba(0, 0, 0, 0.9), 8px 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 0 8px rgba(0, 0, 0, 0.7), 8px 0 20px rgba(0, 0, 0, 0.4);
     flex: 0 0 auto;
     align-self: stretch;
     margin: 0 29px;
+    min-height: 250px;
+    border-radius: 3px;
 }
 
 .image-area {
     flex: 1;
     display: flex;
     justify-content: center;
-    padding-left: 15px;
-    margin-top: 10px; /* Desce a imagem um pouquinho */
+    padding-left: 25px;
+    margin-top: 25px;
 }
 
 .featured-image {
-    width: 95%; /* Reduzi o tamanho da imagem */
+    width: 100%;
     max-width: 355px;
     height: auto;
-    border-radius: 4px;
 }
 
 /* --- Ajustes para Celular --- */
 @media (max-width: 850px) {
-    h1 {
-        margin-bottom: 30px;
+    .navbar {
+        height: auto;
+        padding: 15px 0;
     }
-
     .content-wrapper {
         flex-direction: column;
         align-items: center;
     }
-
-    .nav-links a {
-        font-size: 0.8rem;
-    }
-
-    .text-area {
-        padding-right: 0;
-        margin-bottom: 0;
-    }
-
     .line-divider {
         width: 100%;
         height: 3px;
         min-height: auto;
-        background-color: #000000;
-        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.9), 0 8px 20px rgba(0, 0, 0, 0.5);
         margin: 30px 0;
-        align-self: center;
-    }
-
-    .image-area {
-        padding-left: 0;
-        margin-top: 28px;
-    }
-
-    .featured-image {
-        width: 100%;
     }
 }
