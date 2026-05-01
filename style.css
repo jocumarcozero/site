@@ -96,7 +96,6 @@ h1 {
     padding-left: 0px;
 }
 
-/* --- Conteúdo --- */
 .container {
     max-width: 800px;
     margin: 10px auto;
@@ -142,20 +141,158 @@ h1 {
     height: auto;
 }
 
-/* --- Ajustes para Celular --- */
-@media (max-width: 850px) {
+/* --- Botão de Tradução (Base Original Adaptada) --- */
+.translate-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start; /* AJUSTE 1: Alinhado à esquerda com o texto */
+    position: relative;
+    padding-left: 7px; /* Alinhamento com a margem do texto */
+}
+
+.lang-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-color);
+    border: 1.5px solid #000000; /* AJUSTE 2: Borda preta sólida */
+    border-radius: 50px;
+    padding: 4px 12px 4px 6px;
+    cursor: pointer;
+    margin-top: -1px; 
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.lang-button span {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+
+.globe-icon svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    color: var(--text-color);
+}
+
+.arrow-icon svg {
+    width: 12px;
+    height: 12px;
+    display: block;
+    color: var(--text-color);
+    transform: rotate(90deg); /* Seta para baixo */
+}
+
+/* --- AJUSTE 3: Menu Dropdown TOTALMENTE OPACO --- */
+.lang-menu {
+    position: absolute;
+    top: 120%; /* Fica logo abaixo do botão */
+    left: 40;
+    
+    /* SOLUÇÃO PARA O SEU PROBLEMA: */
+    background-color: #ffffff;
+    z-index: 9999;
+    border-radius: 12px;
+    display: none; 
+    flex-direction: column;
+    min-width: 130px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra para dar profundidade */
+    overflow: hidden;
+}
+
+.lang-menu.active {
+    display: flex;
+}
+
+.lang-menu.active {
+    display: flex;
+}
+
+.lang-option {
+    padding: 10px 15px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: var(--bg-color); /* Garante que não haja transparência */
+}
+
+.lang-option:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 845px) {
     .navbar {
         height: auto;
         padding: 15px 0;
+        margin: 0;
+        max-width: 100%;
+        border-radius: 0;
     }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.65rem;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .container {
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
     .content-wrapper {
         flex-direction: column;
         align-items: center;
     }
+
+    .text-area {
+        padding-right: 0px;
+    }
+    .title-icon {
+        top: 5px;
+    }
+
     .line-divider {
         width: 100%;
         height: 3px;
         min-height: auto;
-        margin: 30px 0;
+        margin: 7px 0;
     }
+}
+
+@media (max-width: 330px) {
+
+    h1 {
+
+        font-size: 1.7rem;
+
+    }
+
+    .title-icon {
+
+        top: 4px;
+
+    }
+
+    .nav-links a {
+        font-size: 0.45rem;
+    }
+
 }

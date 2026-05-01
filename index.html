@@ -12,22 +12,46 @@
     <header class="navbar">
         <nav>
             <ul class="nav-links">
-                <li><a href="#">Casinha</a></li>
+                <li><a href="#">Rua</a></li>
                 <li><a href="#">Visitas</a></li>
+                <li><a href="#">Casinha</a></li>
                 <li><a href="#">CER</a></li>
-                <li><a href="#">Sobre Nós</a></li>
             </ul>
         </nav>
     </header>
 
+
     <main class="container">
         <section class="hero">
             <h1>Jocum Marc<img src="imagens/icone.png" alt="o" class="title-icon"> Zero</h1>
-            
+            <div class="translate-container">
+                <button id="translate-btn" class="lang-button">
+                    <div class="globe-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <span id="lang-text">Português</span>
+                    <div class="arrow-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </button>
+                <!-- Menu de opções opaco -->
+                <div id="lang-menu" class="lang-menu">
+                    <div class="lang-option" data-lang="pt">Português</div>
+                    <div class="lang-option" data-lang="en">English</div>
+                    <div class="lang-option" data-lang="es">Español</div>
+                </div>
+            </div>
+
             <div class="content-wrapper">
                 <div class="text-area">
                     <p>
-                        Jocum Marco Zero atua no coração do Recife, transformando realidades em comunidades vulneráveis. Através de ações sociais e discipulado, nós buscamos trazer carinho e esperança, refletindo o amor de Deus em áreas de grande necessidade social.
+                        Jocum Marco Zero atua no coração do Recife, transformando realidades de comunidades vulneráveis. Através de ações sociais e discipulado, nós buscamos trazer alegria e esperança, refletindo o amor de Deus em áreas de grande necessidade social.
                     </p>
                     <p>
                         Utilizando artes, evangelismo e assistência prática, focamos na restauração familiar e no amparo a crianças e adolescentes. Com programas de treinamento missionário e voluntariado, a base capacita pessoas para servir e impactar a sociedade de forma relevante e transformadora.
