@@ -1,93 +1,115 @@
-/* Configurações Gerais - Fonte Minimalista */
+/* --- Configurações Globais --- */
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
     line-height: 1.6;
-    background-color: #f9f9f9;
+    background-color: #ffffff; /* Fundo branco para um ar mais limpo */
 }
 
-/* Cabeçalho Minimalista */
+/* --- Cabeçalho Minimalista (Estilo Gates Notes) --- */
 .navbar {
+    background-color: #202020; /* Fundo escuro conforme a referência */
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza os links */
     align-items: center;
-    padding: 1.5rem 10%;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    padding: 20px 0;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 45px; /* Espaçamento generoso entre os itens */
     margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #666;
+    color: #ffffff; /* Texto branco */
     font-size: 0.9rem;
-    transition: color 0.3s;
+    font-weight: 500;
+    text-transform: uppercase; /* Deixa os links em caixa alta para o estilo minimalista */
+    letter-spacing: 1.2px;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #000;
+    color: #cccccc; /* Muda para um cinza claro ao passar o mouse */
 }
 
-/* Layout do Conteúdo */
+/* --- Layout do Conteúdo Principal --- */
 .container {
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 0 20px;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 30px;
 }
 
-h2 {
-    font-weight: 300;
-    font-size: 2rem;
-    margin-bottom: 30px;
+/* Título Minimalista Centralizado */
+.hero h2 {
+    font-weight: 300; /* Fonte mais fina e elegante */
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 50px;
     text-align: center;
+    letter-spacing: -0.5px;
 }
 
+/* Wrapper para alinhar texto e imagem lado a lado */
 .content-wrapper {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 60px; /* Espaço entre o texto e a imagem */
 }
 
+/* Área do Texto (Lorem Ipsum) */
 .text-area {
-    flex: 1;
+    flex: 1.2; /* Dá um pouco mais de espaço para o texto */
     text-align: justify;
+    font-size: 1.1rem;
+    color: #444;
 }
 
+.text-area p {
+    margin-bottom: 20px;
+}
+
+/* Área da Imagem */
 .image-area {
     flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .featured-image {
     width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    /* Remova o box-shadow abaixo se a imagem já tiver sombra própria */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    max-width: 450px;
+    height: auto;
+    border-radius: 4px; /* Arredondamento bem sutil */
+    /* Removido o box-shadow pois a imagem original já possui efeitos visuais fortes */
 }
 
-/* Responsivo para Celular */
-@media (max-width: 768px) {
+/* --- Responsividade para Celulares --- */
+@media (max-width: 850px) {
     .content-wrapper {
-        flex-direction: column;
+        flex-direction: column; /* Empilha o texto e a imagem em telas pequenas */
+        text-align: center;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
     }
     
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
+    .text-area {
+        text-align: left; /* Mantém o texto alinhado à esquerda no celular para facilitar leitura */
     }
 }
