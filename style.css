@@ -8,31 +8,51 @@ body {
     background-color: #ffffff;
     overflow-x: hidden;
     width: 100%;
+    padding-top: 60px;
 }
 
-/* --- Navbar (Extremidade Inferior) --- */
+
+/*
+
+
+
+
+
+cabeçalho
+
+
+
+
+*/
+
 .navbar {
-    background-color: #202020;
+    position: fixed;
+    top: 20px; /* Dá um pequeno espaço do topo para parecer flutuante */
+    left: 50%;
+    transform: translateX(-50%); /* Truque clássico para centralizar elemento fixo */
+    
+    /* Define a largura do bloco no computador */
+    width: 90%; 
+    max-width: 800px; /* Limita o tamanho para não esticar demais em telas grandes */
+    
     display: flex;
     justify-content: center;
-    align-items: stretch;
-    padding: 0;
-    width: 100%;
-    max-width: 800px;
-    margin: 30px auto 0;
-    border-radius: 4px;
-    overflow: hidden; 
-    height: 70px;
+    align-items: center;
+    z-index: 1000;
+    
+    background-color: #1a1a1a;
+    padding: 15px 0;
+    border-radius: 8px; /* Arredonda as bordas para o visual delimitado */
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
 }
 
 .nav-links {
     font-family: 'Segoe UI', sans-serif;
-    list-style: none;
     display: flex;
-    gap: 45px;
+    list-style: none;
+    gap: 30px;
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 .nav-links li {
@@ -63,11 +83,11 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 4px; 
+    height: 2.5px; 
     background-color: #ffffff;
     opacity: 0;
-    transform: translateY(10px);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    bottom: -15px;
 }
 
 .nav-links a:hover::after {
@@ -75,13 +95,25 @@ body {
     transform: translateY(0);
 }
 
-/* --- Título h1 com Alinhamento Ajustado --- */
+/*
+
+
+
+
+
+introdução
+
+
+
+
+*/
+
 h1 {
     text-align: center;
     font-weight: 500;
     font-size: 3rem;
-    margin-top: 40px;
-    margin-bottom: 50px;
+    margin-top: 55px;
+    margin-bottom: 35px;
     color: #1a1a1a;
     display: flex;
     
@@ -94,7 +126,7 @@ h1 {
     width: auto;
     margin: em;
     position: relative;
-    top: 9px; /* FAZ A IMAGEM DESCER para alinhar com o "Marc" */
+    top: 7.5px; /* FAZ A IMAGEM DESCER para alinhar com o "Marc" */
     vertical-align: baseline;
     padding-right: 10px;
     padding-left: 0px;
@@ -123,7 +155,8 @@ h1 {
 .line-divider {
     width: 3px;
     background-color: #000000;
-    box-shadow: 3px 0 8px rgba(0, 0, 0, 0.468), 8px 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+
     flex: 0 0 auto;
     align-self: stretch;
     margin: 0 29px;
@@ -228,6 +261,72 @@ h1 {
 .lang-option:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
+
+/*
+
+
+
+
+rua
+
+
+
+
+*/
+
+/* Força o scroll suave em toda a janela */
+html, body {
+    scroll-behavior: smooth !important;
+}
+
+/* Garante que as seções tenham espaço para serem alcançadas */
+.project-section {
+    scroll-margin-top: 100px;
+    min-height: 90px; /* Garante que a seção exista visualmente */
+}
+
+.projects-wrapper {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Espaço entre as seções */
+}
+
+.project-section {
+    padding: 40px;
+    padding-top: 0px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra para dar profundidade */
+    /* Offset para a rolagem não cobrir o topo do título se houver header fixo */
+    scroll-margin-top: 100px; 
+}
+
+.project-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 10px;
+}
+
+.project-content {
+    text-align: justify;
+}
+
+/*
+
+
+
+
+
+contatos
+
+
+
+
+*/
 
 /* --- Espaçamento entre o conteúdo e o fim da página --- */
 .footer-spacer {
@@ -362,36 +461,6 @@ h1 {
     width: 100%;
 }
 
-/* --- Media Query para 1400px e abaixo --- */
-@media (max-width: 1400px) {
-    .contact-card {
-        padding: 40px; /* Estabiliza o respiro interno */
-    }
-}
-
-/* --- O ponto de quebra onde tudo vira uma coluna só --- */
-@media (max-width: 1100px) {
-    .contact-card {
-        flex-direction: column; /* Empilha as informações sobre o formulário */
-        align-items: stretch;
-    }
-
-    .contact-info {
-        padding-right: 0;
-        margin-bottom: 40px;
-        text-align: left; /* Opcional: centraliza o texto no mobile */
-    }
-
-    .form-row {
-        flex-direction: column; /* Nome e Email ficam um sobre o outro no mobile */
-    }
-    
-    .social-circles {
-        justify-content: left; /* Centraliza os ícones no mobile */
-    }
-}
-
-/* Coluna Esquerda */
 .contact-info {
     flex: 1;
     padding-right: 40px;
@@ -520,7 +589,6 @@ h1 {
     transform: translateY(-2px);
 }
 
-/* Responsivo para o Recife */
 @media (max-width: 800px) {
     .contact-card {
         flex-direction: column;
@@ -539,25 +607,32 @@ h1 {
 }
 
 @media (max-width: 845px) {
+@media (max-width: 845px) {
     .navbar {
-        height: auto;
+        width: 100%;       /* Ocupa toda a largura */
+        max-width: none;   /* Remove o limite de 800px que colocamos antes */
+        top: 0;            /* Cola no topo da tela */
+        border-radius: 0;  /* Remove as bordas arredondadas */
+        left: 0;           /* Reseta a posição */
+        transform: none;   /* Remove o efeito de centralização do desktop */
         padding: 15px 0;
-        margin: 0;
-        max-width: 100%;
-        border-radius: 0;
     }
 
     .nav-links {
-        gap: 15px;
+        gap: 15px;         /* Reduz o espaço entre os links no celular */
+        justify-content: center;
+        width: 100%;
     }
 
     .nav-links a {
-        font-size: 0.65rem;
+        font-size: 0.8rem; /* Ajuste leve para caber melhor no celular */
     }
 
+    /* Se quiser esconder as linhas no celular como na imagem */
     .nav-links a::after {
         display: none;
     }
+}
 
     .container {
         padding: 0 20px;
@@ -608,4 +683,36 @@ h1 {
         font-size: 0.45rem;
     }
 
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 17px;
+    right: 17px;
+    width: 35px;
+    height: 35px;
+    background-color: #1a1a1a; /* Cor igual ao seu header */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Formato circular */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    z-index: 1000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* Não clicável enquanto invisível */
+}
+
+.back-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back-to-top:hover {
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+    /* Pequeno "pulo" para cima */
+    transform: translateY(-3px);
 }
