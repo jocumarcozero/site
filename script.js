@@ -67,7 +67,7 @@ const content = {
             "Abordaje en las calles de Recife con evangelismo junto a la población sin hogar, ofreciendo un hombro acogedor, juegos, cine e esperanza.",
             "Acompañamiento y construcción de vínculos en las comunidades, llevando una palabra de consuelo y asistencia a las familias.",
             "Un espacio dedicado al cuidado de niños y preadolescentes, ofreciendo refuerzo escolar, actividades lúdicas y principios cristianos en un ambiente seguro.",
-            "Capacitación intensiva diseñada para empoderar a misioneros y obreros para actuar en la defensa, protección y transformación de niños en situaciones de vulnerabilidad."
+            "Capacitación intensiva creado para capacitar a misioneros y obreros para actuar en la defensa, protección y transformación de niños en situaciones de vulnerabilidad."
         ],
         cerTitle: "CER (Escuela Niños en Riesgo)",
         footer: {

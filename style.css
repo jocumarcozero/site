@@ -168,12 +168,12 @@ h1 {
     flex: 1;
     display: flex;
     justify-content: center;
-    padding-left: 25px;
+    padding-left: 38px;
     margin-top: 25px;
 }
 
 .featured-image {
-    width: 100%;
+    width: 108%;
     max-width: 500px;
     height: auto;
 }
@@ -288,7 +288,7 @@ html, body {
 .projects-wrapper {
     width: 90%;
     max-width: 900px;
-    margin: 40px auto;
+    margin: 100px auto;
     display: flex;
     flex-direction: column;
     gap: 60px; /* Espaço entre as seções */
@@ -415,7 +415,7 @@ contatos
 
 .main-footer {
     width: 100%;
-    min-height: 100vh; /* Faz o footer ocupar a tela inteira se necessário */
+    min-height: 90vh; /* Faz o footer ocupar a tela inteira se necessário */
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center;     /* Centraliza verticalmente */
@@ -633,6 +633,14 @@ contatos
     .nav-links a::after {
         display: none;
     }
+
+    .image-area {
+        padding-left: 13px;
+    }
+    .projects-wrapper {
+        margin: 50px auto;
+    }
+
 }
 
     .container {
@@ -642,7 +650,7 @@ contatos
 
     h1 {
         font-size: 2rem;
-        margin-top: 25px;
+        margin-top: 13px;
         margin-bottom: 25px;
     }
 
