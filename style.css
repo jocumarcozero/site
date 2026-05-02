@@ -432,6 +432,7 @@ contatos
     /* Ocupa 90% da tela, mas nunca mais que 900px */
     width: calc(100% - 40px); 
     max-width: 900px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.742);
     
     /* Centralização garantida */
     margin: 20px auto; 
