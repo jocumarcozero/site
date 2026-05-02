@@ -1,11 +1,13 @@
 /* --- Configurações de Base --- */
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: Public Sans, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #000000;
     line-height: 1.6;
     background-color: #ffffff;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* --- Navbar (Extremidade Inferior) --- */
@@ -24,6 +26,7 @@ body {
 }
 
 .nav-links {
+    font-family: 'Segoe UI', sans-serif;
     list-style: none;
     display: flex;
     gap: 45px;
@@ -75,12 +78,13 @@ body {
 /* --- Título h1 com Alinhamento Ajustado --- */
 h1 {
     text-align: center;
-    font-weight: 300;
-    font-size: 2.8rem;
+    font-weight: 500;
+    font-size: 3rem;
     margin-top: 40px;
     margin-bottom: 50px;
     color: #1a1a1a;
     display: flex;
+    
     justify-content: center;
     align-items: baseline; /* Alinha o texto e a imagem pela linha de base */
 }
@@ -90,7 +94,7 @@ h1 {
     width: auto;
     margin: em;
     position: relative;
-    top: 7px; /* FAZ A IMAGEM DESCER para alinhar com o "Marc" */
+    top: 9px; /* FAZ A IMAGEM DESCER para alinhar com o "Marc" */
     vertical-align: baseline;
     padding-right: 10px;
     padding-left: 0px;
@@ -119,7 +123,7 @@ h1 {
 .line-divider {
     width: 3px;
     background-color: #000000;
-    box-shadow: 3px 0 8px rgba(0, 0, 0, 0.7), 8px 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 3px 0 8px rgba(0, 0, 0, 0.468), 8px 0 20px rgba(0, 0, 0, 0.4);
     flex: 0 0 auto;
     align-self: stretch;
     margin: 0 29px;
@@ -137,7 +141,7 @@ h1 {
 
 .featured-image {
     width: 100%;
-    max-width: 355px;
+    max-width: 500px;
     height: auto;
 }
 
@@ -148,7 +152,7 @@ h1 {
     display: flex;
     justify-content: flex-start; /* AJUSTE 1: Alinhado à esquerda com o texto */
     position: relative;
-    padding-left: 7px; /* Alinhamento com a margem do texto */
+    padding-left: 0px; /* Alinhamento com a margem do texto */
 }
 
 .lang-button {
@@ -225,6 +229,315 @@ h1 {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+/* --- Espaçamento entre o conteúdo e o fim da página --- */
+.footer-spacer {
+    height: 200px; /* Ajuste essa altura para aumentar o espaço em branco */
+    width: 100%;
+}
+.main-footer {
+    width: 50%;
+    min-height: 500px;
+    position: relative;
+    /* Adicione sua imagem aqui */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                      url('sua-imagem-horizontal.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito parallax opcional, fica bem moderno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.footer-overlay-content {
+    text-align: center;
+    font-family: 'Public Sans', sans-serif;
+    color: #1a1a1a;
+    max-width: 600px;
+}
+
+.footer-title {
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+.footer-info p {
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-info i {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* --- Ícones Sociais --- */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.social-icons a {
+    color: #1a1a1a;
+    font-size: 1.8rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+    color: #555; /* Cor leve ao passar o mouse */
+}
+
+/* Responsividade para o Recife (Mobile) */
+@media (max-width: 600px) {
+    .footer-title {
+        font-size: 1.8rem;
+    }
+    .footer-info p {
+        font-size: 0.9rem;
+    }
+}
+
+.footer-spacer {
+    height: 150px;
+    width: 100%;
+}
+
+.main-footer {
+    width: 100%;
+    min-height: 100vh; /* Faz o footer ocupar a tela inteira se necessário */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    padding: 0;              /* Remove paddings que podem deslocar o card */
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.173)), 
+                      url('imagens/imagem2.1.jpg');
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+}
+
+.contact-card {
+    background: white;
+    /* Ocupa 90% da tela, mas nunca mais que 900px */
+    width: calc(100% - 40px); 
+    max-width: 900px;
+    
+    /* Centralização garantida */
+    margin: 20px auto; 
+    
+    display: flex;
+    flex-direction: row; /* Começa como linha */
+    padding: 50px;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+/* Garante que os inputs preencham o card */
+.contact-form, .input-group {
+    width: 100%;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    box-sizing: border-box; /* Fundamental para o input não vazar */
+}
+
+/* Ajuste específico para os campos de Nome e Email ficarem lado a lado até certo ponto */
+.form-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+/* --- Media Query para 1400px e abaixo --- */
+@media (max-width: 1400px) {
+    .contact-card {
+        padding: 40px; /* Estabiliza o respiro interno */
+    }
+}
+
+/* --- O ponto de quebra onde tudo vira uma coluna só --- */
+@media (max-width: 1100px) {
+    .contact-card {
+        flex-direction: column; /* Empilha as informações sobre o formulário */
+        align-items: stretch;
+    }
+
+    .contact-info {
+        padding-right: 0;
+        margin-bottom: 40px;
+        text-align: left; /* Opcional: centraliza o texto no mobile */
+    }
+
+    .form-row {
+        flex-direction: column; /* Nome e Email ficam um sobre o outro no mobile */
+    }
+    
+    .social-circles {
+        justify-content: left; /* Centraliza os ícones no mobile */
+    }
+}
+
+/* Coluna Esquerda */
+.contact-info {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.contact-info h2 {
+    margin-top: 0; /* Remove o espaço extra no topo */
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #000;
+    line-height: 1; /* Garante que a altura da linha não crie vácuo */
+}
+
+.info-group {
+    margin-bottom: 20px;
+}
+
+.info-group label, .social-section label {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.info-group p {
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    margin: 0;
+    font-weight: 400;
+}
+
+.social-circles {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.social-circles a {
+    width: 35px;
+    height: 35px;
+    background: #1a1a1a;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    /* Transição apenas para a sombra e movimento */
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.social-circles a:hover {
+    /* Mantém a cor preta original */
+    background: #1a1a1a;
+    opacity: 1; /* Garante que não fique transparente */
+    /* Sombra circular suave */
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+    /* Pequeno "pulo" para cima */
+    transform: translateY(-2px);
+}
+
+/* Coluna Direita (Form) */
+.contact-form {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.input-group input, .input-group textarea {
+    background: #f4f4f4;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.input-group textarea {
+    height: 150px;
+    resize: none;
+}
+
+.send-btn {
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    /* Adiciona uma transição suave para a sombra */
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.send-btn:hover {
+    /* Mantém a cor preta original */
+    background: #1a1a1a;
+    opacity: 1; /* Garante que não fique transparente */
+    /* Sombra circular suave */
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+    /* Pequeno "pulo" para cima */
+    transform: translateY(-2px);
+}
+
+/* Responsivo para o Recife */
+@media (max-width: 800px) {
+    .contact-card {
+        flex-direction: column;
+        padding: 30px;
+    }
+    .contact-info {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    .form-row {
+        flex-direction: column;
+    }
+    .contact-info h2 {
+        font-size: 1.4rem;
+    }
+}
+
 @media (max-width: 845px) {
     .navbar {
         height: auto;
@@ -281,7 +594,7 @@ h1 {
 
     h1 {
 
-        font-size: 1.7rem;
+        font-size: 1.3rem;
 
     }
 

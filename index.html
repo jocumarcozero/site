@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jocum Marco Zero</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="imagens/icone.png" type="image/png">
+    <link rel="icon" href="imagens/ywam.png" type="image/png">
 </head>
 <body>
 
@@ -23,7 +23,7 @@
 
     <main class="container">
         <section class="hero">
-            <h1>Jocum Marc<img src="imagens/icone.png" alt="o" class="title-icon"> Zero</h1>
+            <h1>Jocum Marc<img src="imagens/icon.png" alt="o" class="title-icon"> Zero</h1>
             <div class="translate-container">
                 <button id="translate-btn" class="lang-button">
                     <div class="globe-icon">
@@ -40,7 +40,7 @@
                         </svg>
                     </div>
                 </button>
-                <!-- Menu de opções opaco -->
+
                 <div id="lang-menu" class="lang-menu">
                     <div class="lang-option" data-lang="pt">Português</div>
                     <div class="lang-option" data-lang="en">English</div>
@@ -66,6 +66,69 @@
             </div>
         </section>
     </main>
+
+    <div class="footer-spacer"></div>
+    <!-- Importando a Public Sans e ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <div class="footer-spacer"></div>
+
+    <footer class="main-footer">
+        <div class="contact-card">
+            <!-- Coluna da Esquerda: Info -->
+            <div class="contact-info">
+                <h2>Entre em contato :)</h2>
+                
+                <div class="info-group">
+                    <label>Email:</label>
+                    <p>jocumarcozero@gmail.com</p>
+                </div>
+
+                <div class="info-group">
+                    <label>Whatsapp:</label>
+                    <p>+55 (81) 99590-5821</p>
+                </div>
+
+                <div class="info-group">
+                    <label>Endereço:</label>
+                    <p>1° Travessa Rua Cap. João Romã, 30<br>
+                    Cordeiro, Recife - PE, 50630-590</p>
+                </div>
+
+                <div class="social-section">
+                    <label>Siga-nos</label>
+                    <div class="social-circles">
+                        <a href="https://www.instagram.com/jocummarcozero" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/jocummarcozero/?locale=pt_BR" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna da Direita: Formulário -->
+            <div class="contact-form">
+                <form id="contact-form" action="https://formspree.io/f/mwvyprkp" method="POST" class="contact-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Seu nome</label>
+                            <input type="text" name="name" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Endereço de e-mail</label>
+                            <input type="email" name="email" placeholder="Seu endereço de e-mail" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Mensagem</label>
+                        <textarea name="message" placeholder="Escreva algo..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="send-btn">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
