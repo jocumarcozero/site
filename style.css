@@ -572,7 +572,7 @@ contatos
     position: relative;
     /* Adicione sua imagem aqui */
     background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
-                      url('imagens/imagem2.jpg'); 
+                      url('sua-imagem-horizontal.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Efeito parallax opcional, fica bem moderno */
@@ -657,7 +657,7 @@ contatos
     align-items: center;     /* Centraliza verticalmente */
     padding: 0;              /* Remove paddings que podem deslocar o card */
     background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.173)), 
-                      url('imagens/imagem2.1.jpg');
+                      url('imagens/imagem2.jpg');
     background-size: cover;
     background-position: center;
     box-sizing: border-box;
