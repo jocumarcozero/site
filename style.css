@@ -305,7 +305,7 @@ html, body {
 .projects-wrapper {
     width: 95%;
     max-width: 1000px;
-    margin: 100px auto;
+    margin: 150px auto 100px auto;
     display: flex;
     flex-direction: column;
     gap: 60px;
@@ -329,8 +329,11 @@ html, body {
 
 /* --- 3. Textos e Alinhamento Superior --- */
 .text-column {
+/* --- 3. Textos e Alinhamento Superior --- */
     width: 100%;
-    padding: 0 10px;
+    /* Aumentei de 10px para 20px nas laterais para criar o recuo que você marcou */
+    padding: 0 15px; 
+    box-sizing: border-box;
 }
 
 .project-title {
@@ -373,7 +376,7 @@ html, body {
 .slide { min-width: 100%; height: 100%; }
 .slide img { width: 100%; height: 100%; object-fit: cover; }
 
-/* --- 5. Controles (Com Efeito Smooth ao Pausar) --- */
+/* --- 5. Controles (ALTERADO PARA FADE AO PAUSAR) --- */
 .slider-controls {
     position: absolute;
     bottom: 15px;
@@ -383,22 +386,35 @@ html, body {
     align-items: center;
     gap: 8px;
     z-index: 10;
-    /* Transição suave para opacidade */
-    transition: opacity 0.2s ease-in-out, visibility 0.4s;
+    /* Transição suave para opacidade e visibilidade */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     opacity: 1;
+    visibility: visible;
 }
 
-/* Efeito suave ao pressionar */
+/* Efeito que esconde os controles quando a classe .paused é aplicada via JS */
 .instagram-slider.paused .slider-controls { 
     opacity: 0; 
     visibility: hidden;
     pointer-events: none; 
 }
 
-.progress-bar { width: 30px; border-radius: 2px; height: 3.5px; background: rgba(255,255,255,0.3); }
-.progress-fill { border-radius: 2px; height: 100%; background: #fff; width: 0%; }
+.progress-bar { 
+    width: 30px; 
+    border-radius: 2px; 
+    height: 3.5px; 
+    background: rgba(255,255,255,0.3); 
+}
+
+.progress-fill { 
+    border-radius: 2px; 
+    height: 100%; 
+    background: #fff; 
+    width: 0%; 
+}
 
 .dots-container { display: flex; gap: 6px; }
+
 .dot { 
     width: 6px; 
     height: 6px; 
@@ -422,12 +438,11 @@ html, body {
 .extra-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.6s ease-in-out, opacity 0.4s; /* Aumentei um pouco o tempo para ficar mais suave */
+    transition: max-height 0.6s ease-in-out, opacity 0.4s;
     opacity: 0;
 }
 
 .extra-content.active { 
-    /* Alterado de 400px para 2000px para garantir que textos longos caibam */
     max-height: 2000px; 
     opacity: 1; 
     margin-top: 15px; 
@@ -441,37 +456,34 @@ html, body {
     cursor: pointer; 
     padding: 2px 0; 
     text-decoration: none; 
-    position: relative; /* Necessário para posicionar a linha */
-    display: inline-block; /* Garante que a linha tenha a largura do texto */
+    position: relative; 
+    display: inline-block; 
 }
 
-/* Criando a linha invisível no estado normal */
-/* --- 6. "Ler Mais" (Padronização da Linha) --- */
 .read-more-btn::after {
     content: "";
     position: absolute;
     width: 0; 
-    height: 2.5px; /* Aumentar levemente para 2.5px ou 3px ajuda a evitar o efeito de "sumir" */
-    bottom: -2px;  /* Descer um pouco mais a linha para não encostar na letra */
+    height: 2.5px; 
+    bottom: -2px;  
     left: 50%; 
     background-color: #272727; 
     transition: all 0.2s ease-in-out;
     transform: translateX(-50%);
-    
-    /* ADICIONE ESTA LINHA ABAIXO: */
-    backface-visibility: hidden; /* Ajuda o navegador a renderizar melhor a animação */
+    backface-visibility: hidden; 
 }
 
-/* Efeito ao passar o mouse: a linha expande para 100% */
 .read-more-btn:hover::after {
     width: 100%;
 }
+
 /* ============================================================
    RESPONSIVO E DESKTOP
    ============================================================ */
 
 /* --- 7. Mobile (Responsivo Clean) --- */
 .color-offset-bg { display: none; }
+
 .slider-frame {
     position: relative;
     z-index: 2;
@@ -501,7 +513,6 @@ html, body {
 
     .image-column { flex: 0 0 340px; }
 
-    /* Fundo Colorido: Aumentado 15px para a direita e para baixo */
     .color-offset-bg {
         display: block;
         position: absolute;
@@ -838,7 +849,7 @@ contatos
         padding-left: 6px;
     }
     .projects-wrapper {
-        margin: 0px auto;
+        margin: 60px auto;
     }
     .project-section {
         text-align: left;
@@ -904,7 +915,7 @@ contatos
 
     h1 {
 
-        font-size: 1.rem;
+        font-size: 1.5rem;
 
     }
 

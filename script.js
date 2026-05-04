@@ -53,7 +53,7 @@ const content = {
             "Intensive training designed to empower missionaries and workers to act in the defense and protection of children."
         ],
         extraTexts: [
-            "By occupying this space with evangelism, active listening, and leisure, such as movie sessions and games, our paradigms are challenged. <br><br>We realize that the street doesn't only offer dangers, but also bonds of friendship, leisure, and a sense of belonging that is often lacking at home. However, this freedom is frequently accompanied by early drug use and exposure to severe risks. The challenge becomes complex when we find youths as young as twelve who resist returning home due to contexts of neglect and domestic violence, preferring the absence of rules on the streets to the precariousness of their homes. <br><br>Our mission, carried out twice a week, goes beyond assistance; we seek to build bridges of trust through prayer and welcoming. The goal is to show that the freedom found on the streets is illusory and that there is a path of dignity and hope away from decay, working so they understand that the best place to be is with family, provided it is an environment of real protection and care.",
+            "By occupying this space with evangelism, active listening, and leisure, such as movie sessions and games, our paradigms are challenged. <br><br>We realize that the street doesn't only offer dangers, but also bonds of friendship, leisure, and a sense of belonging that is often lacking at home. However, this freedom is frequently accompanied by early drug use and exposure to severe risks. The challenge becomes complex when we find youths as young as twelve who resist returning home due to contexts of neglect and domestic violence, preferring the absence of rules on the streets to the precociousness of their homes. <br><br>Our mission, carried out twice a week, goes beyond assistance; we seek to build bridges of trust through prayer and welcoming. The goal is to show that the freedom found on the streets is illusory and that there is a path of dignity and hope away from decay, working so they understand that the best place to be is with family, provided it is an environment of real protection and care.",
             "Community visits focused on listening and serving local needs with love and dedication.",
             "Through Christian principles in a safe environment, we seek to transform the future of the next generation from an early age.",
             "CER focuses on transforming vulnerable realities through deep and spiritual preparation for the mission field."
@@ -78,20 +78,20 @@ const content = {
         readMore: "Leer más",
         readLess: "Leer menos",
         title: 'Jucum Marc<img src="imagens/icon.png" alt="o" class="title-icon"> Zero',
-        p1: "Jucum Marco Zero actúa en el corazón de Recife, transformando realidades de comunidades vulnerables. A través de acciones sociales y discipulado, buscamos traer alegría e esperanza, reflejando el amor de Dios en áreas de gran necesidad social.",
+        p1: "Jucum Marco Zero actúa en el corazón de Recife, transformando realidades de comunidades vulnerables. A través de acciones sociales e discipulado, buscamos traer alegría e esperanza, reflejando el amor de Dios en áreas de gran necesidad social.",
         p2: "Utilizando artes, evangelismo y asistencia prática, nos enfocamos en la restauración familiar y el amparo a niños y adolescentes. Con programas de capacitación misionera y voluntariado, la base capacita personas para servir e impactar la sociedad de forma relevante e transformadora.",
         nav: ["Calle", "Visitas", "Casinha", "CER"],
         projectsDesc: [
-            "El trabajo de Jucum Marco Zero en las calles de Recife nace del esfuerzo de ver la ciudad desde la perspectiva de los niños y adolescentes que salen de sus hogares a diario.",
-            "Acompañamiento y construcción de vínculos en las comunidades, llevando una palabra de consuelo y asistencia a las familias.",
-            "Un espacio dedicado al cuidado de niños e preadolescentes, ofreciendo refuerzo escolar y actividades lúdicas.",
+            "El trabalho de Jucum Marco Zero en las calles de Recife nace del esfuerzo de ver la ciudad desde la perspectiva de los niños y adolescentes que salen de sus hogares a diario.",
+            "Acompañamiento y construcción de vínculos en las comunidades, llevando una palavra de consuelo y asistencia a las familias.",
+            "Un espaço dedicado al cuidado de niños e preadolescentes, ofreciendo refuerzo escolar y actividades lúdicas.",
             "Capacitación intensiva creado para capacitar a misioneros y obreros para actuar en la defensa y protección de niños.",
         ],
         extraTexts: [
-            "Al ocupar este espacio con evangelismo, escucha activa y recreación, como sesiones de cine y juegos, nuestros paradigmas son confrontados. <br><br>Nos damos cuenta de que la calle no solo ofrece peligros, sino también lazos de amistad, ocio y un sentido de pertenencia que muchas veces falta en el hogar. Sin embargo, esta libertad suele ir acompañada del consumo precoz de drogas y la exposición a graves riesgos. Nuestra misión busca construir puentes de confianza para mostrar que hay un camino de dignidad fuera de las calles.",
-            "Visitas comunitarias enfocadas en escuchar y servir las necesidades locales con amor y dedicación.",
-            "A través de principios cristianos en un ambiente seguro, buscamos transformar el futuro de la próxima generación desde temprana edad.",
-            "CER se enfoca en la transformación de realidades vulnerables a través de una preparación profunda y espiritual para el campo misionero."
+            "Al ocupar este espaço con evangelismo, escucha activa y recreación, como sesiones de cine y juegos, nuestros paradigmas son confrontados. <br><br>Nos damos cuenta de que la calle no solo ofrece peligros, sino también lazos de amistad, ocio y un sentido de pertenencia que muchas veces falta no hogar. Sin embargo, esta libertad suele ir acompañada del consumo precoz de drogas e la exposición a graves riesgos. Nossa missão busca construir pontes de confiança para mostrar que hay un camino de dignidad fuera de las calles.",
+            "Visitas comunitarias enfocadas en escuchar y servir las necesidades locales con amor e dedicación.",
+            "A través de princípios cristianos en un ambiente seguro, buscamos transformar el futuro de la próxima generación desde temprana edad.",
+            "CER se enfoca en la transformación de realidades vulnerables através de una preparación profunda y espiritual para el campo misionero."
         ],
         cerTitle: "CER (Escuela Niños en Riesgo)",
         footer: {
@@ -109,14 +109,6 @@ const content = {
         }
     }
 };
-
-// --- AUXILIARES ---
-function getCurrentLang() {
-    const text = langText.innerText;
-    if (text === "English") return "en";
-    if (text === "Español") return "es";
-    return "pt";
-}
 
 function updateLanguage(lang) {
     langText.innerText = content[lang].btn;
@@ -145,7 +137,6 @@ function updateLanguage(lang) {
             descElement.innerText = content[lang].projectsDesc[i];
         }
 
-        // --- CORREÇÃO AQUI: Traduz o texto de dentro do "Ler mais" ---
         if (extraContentElement) {
             extraContentElement.innerHTML = content[lang].extraTexts[i];
         }
@@ -156,7 +147,6 @@ function updateLanguage(lang) {
         }
     });
 
-    // Footer
     document.querySelector('.contact-info h2').innerText = content[lang].footer.title;
     const labels = document.querySelectorAll('.info-group label');
     if(labels.length >= 3) { 
@@ -178,22 +168,26 @@ function updateLanguage(lang) {
     document.querySelector('.send-btn').innerText = content[lang].footer.sendBtn;
 }
 
-// --- EVENTOS ---
-translateBtn.addEventListener('click', (e) => { 
-    e.stopPropagation(); 
-    langMenu.classList.toggle('active'); 
-});
-
-document.addEventListener('click', () => langMenu.classList.remove('active'));
+translateBtn.onclick = (e) => { e.stopPropagation(); langMenu.classList.toggle('active'); };
+document.onclick = () => langMenu.classList.remove('active');
 
 document.querySelectorAll('.lang-option').forEach(opt => {
-    opt.addEventListener('click', () => {
-        updateLanguage(opt.getAttribute('data-lang'));
-    });
+    opt.onclick = () => updateLanguage(opt.getAttribute('data-lang'));
 });
 
 const initApp = () => {
-    // Sliders
+    // CORREÇÃO DA NAVBAR: Enviando para as seções corretas
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.onclick = (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+    });
+
     document.querySelectorAll('.project-section').forEach(section => {
         const slider = section.querySelector('.instagram-slider');
         const wrapper = section.querySelector('.slides-wrapper');
@@ -223,10 +217,34 @@ const initApp = () => {
             progress = 0;
         };
 
-        slider.addEventListener('mousedown', () => { isPaused = true; slider.classList.add('paused'); });
-        slider.addEventListener('mouseup', () => { isPaused = false; slider.classList.remove('paused'); });
-        slider.addEventListener('touchstart', () => { isPaused = true; }, {passive: true});
-        slider.addEventListener('touchend', () => { isPaused = false; });
+        // --- LÓGICA DE PAUSA (ALTERADA) ---
+
+        // Desktop: Manter pressionado para pausar e sumir barra/dots
+        slider.onmousedown = () => {
+            if (window.innerWidth >= 800) {
+                isPaused = true;
+                slider.classList.add('paused');
+            }
+        };
+
+        window.addEventListener('mouseup', () => {
+            if (window.innerWidth >= 800 && isPaused) {
+                isPaused = false;
+                slider.classList.remove('paused');
+            }
+        });
+
+        // Responsivo: Clicar para travar/destravar
+        slider.onclick = (e) => {
+            if (window.innerWidth < 800) {
+                isPaused = !isPaused;
+                if (isPaused) {
+                    slider.classList.add('paused');
+                } else {
+                    slider.classList.remove('paused');
+                }
+            }
+        };
 
         setInterval(() => {
             if (!isPaused) {
@@ -237,27 +255,21 @@ const initApp = () => {
         }, 35);
     });
 
-    // Ler Mais
-    document.querySelectorAll('.project-section').forEach(section => {
-        const btn = section.querySelector('.read-more-btn');
-        const extra = section.querySelector('.extra-content');
-        
-        btn?.addEventListener('click', () => {
+    document.querySelectorAll('.read-more-btn').forEach(btn => {
+        btn.onclick = () => {
+            const extra = btn.closest('.project-section').querySelector('.extra-content');
             const isActive = extra.classList.toggle('active');
-            const lang = getCurrentLang();
+            const lang = (langText.innerText === "English") ? "en" : (langText.innerText === "Español" ? "es" : "pt");
             btn.innerText = isActive ? content[lang].readLess : content[lang].readMore;
-        });
+        };
     });
 };
 
 document.addEventListener('DOMContentLoaded', initApp);
 
-// Botão Voltar ao Topo
 const backToTopBtn = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => {
+window.onscroll = () => {
     if (window.scrollY > 400) backToTopBtn.classList.add('show');
     else backToTopBtn.classList.remove('show');
-});
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+};
+backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
