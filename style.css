@@ -447,11 +447,13 @@ html, body {
     opacity: 1; 
     margin-top: 15px; 
 }
-
 .read-more-btn { 
     background: none; 
     border: none; 
-    color: #272727; 
+    /* Remove a cor fixa e herda a cor do container pai */
+    color: inherit; 
+    /* Herda o tamanho da fonte do texto acima */
+    font-size: inherit;
     font-weight: 550; 
     cursor: pointer; 
     padding: 2px 0; 
@@ -467,7 +469,8 @@ html, body {
     height: 2.5px; 
     bottom: -2px;  
     left: 50%; 
-    background-color: #272727; 
+    /* Herda a cor do texto para a linha */
+    background-color: currentColor; 
     transition: all 0.2s ease-in-out;
     transform: translateX(-50%);
     backface-visibility: hidden; 
@@ -476,7 +479,6 @@ html, body {
 .read-more-btn:hover::after {
     width: 100%;
 }
-
 /* ============================================================
    RESPONSIVO E DESKTOP
    ============================================================ */
@@ -561,7 +563,9 @@ contatos
 .footer-spacer {
     height: 200px; /* Ajuste essa altura para aumentar o espaço em branco */
     width: 100%;
+    display: none;
 }
+
 .main-footer {
     width: 50%;
     min-height: 500px;
@@ -576,6 +580,9 @@ contatos
     justify-content: center;
     align-items: center;
     padding: 60px 20px;
+    margin-top: 60px !important; /* Força o espaço acima do rodapé */
+    clear: both; /* Garante que o rodapé não suba para o lado de elementos flutuantes */
+    display: block;
 }
 
 .footer-overlay-content {
