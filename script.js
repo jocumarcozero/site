@@ -248,7 +248,7 @@ const initApp = () => {
 
         setInterval(() => {
             if (!isPaused) {
-                progress += 1;
+                progress += 0.9;
                 if(progressFill) progressFill.style.width = `${progress}%`;
                 if(progress >= 100) moveSlide(currentIndex + 1);
             }
