@@ -1,9 +1,9 @@
 /* --- Configurações de Base --- */
 body {
-    font-family: Public Sans, sans-serif;
+    font-family: 'Public Sans', sans-serif;
     margin: 0;
     padding: 0;
-    color: #000000;
+    color: #272727;
     line-height: 1.6;
     background-color: #ffffff;
     overflow-x: hidden;
@@ -40,7 +40,7 @@ cabeçalho
     align-items: center;
     z-index: 1000;
     
-    background-color: #1a1a1a;
+    background-color: #272727;
     padding: 15px 0;
     border-radius: 8px; /* Arredonda as bordas para o visual delimitado */
     box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
@@ -148,7 +148,7 @@ h1 {
     flex: 1;
     text-align: justify;
     font-size: 1.05rem;
-    color: #444;
+    color: #272727;
     padding-right: 25px;
 }
 
@@ -225,19 +225,32 @@ h1 {
 }
 
 /* --- AJUSTE 3: Menu Dropdown TOTALMENTE OPACO --- */
+/* 1. O CONTAINER: Mantém o botão onde ele já está */
+.translate-container {
+    position: relative;
+    display: inline-block; /* Faz o container ter exatamente a largura do botão */
+    vertical-align: middle; /* Alinha com textos ao redor, se houver */
+}
+
+/* 2. O MENU: Alinhado à direita do botão */
 .lang-menu {
     position: absolute;
-    top: 120%; /* Fica logo abaixo do botão */
-    left: 40;
+    top: calc(100% + 8px); /* Logo abaixo do botão */
+    right: 0;             /* ALINHAMENTO: a borda direita do menu cola na direita do botão */
     
-    /* SOLUÇÃO PARA O SEU PROBLEMA: */
     background-color: #ffffff;
     z-index: 9999;
     border-radius: 12px;
     display: none; 
     flex-direction: column;
-    min-width: 130px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra para dar profundidade */
+    
+    /* LARGURA: Se adapta ao texto, mas cresce para a esquerda por causa do right: 0 */
+    width: auto; 
+    min-width: 85%;      /* Garante que o menu não seja mais estreito que o botão */
+    white-space: nowrap; 
+    
+    font-weight: 400;     /* Peso da fonte conforme solicitado */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     overflow: hidden;
 }
 
@@ -245,17 +258,16 @@ h1 {
     display: flex;
 }
 
-.lang-menu.active {
-    display: flex;
-}
-
+/* 3. AS OPÇÕES: Texto centralizado */
 .lang-option {
-    padding: 10px 15px;
+    padding: 10px 20px;
     font-family: 'Segoe UI', sans-serif;
     font-size: 0.9rem;
     cursor: pointer;
-    color: var(--text-color);
-    background-color: var(--bg-color); /* Garante que não haja transparência */
+    color: #272727;
+    background-color: #ffffff;
+    text-align: center; /* Português, English e Español ficam centralizados */
+    transition: background-color 0.2s;
 }
 
 .lang-option:hover {
@@ -273,46 +285,252 @@ rua
 
 
 */
+/* ============================================================
+   SEÇÃO PROJETOS (ATUALIZADO: EXPANSÃO E EFEITO SMOOTH)
+   ============================================================ */
 
-/* Força o scroll suave em toda a janela */
+/* --- 1. Configurações Globais e Scroll --- */
 html, body {
     scroll-behavior: smooth !important;
 }
 
-/* Garante que as seções tenham espaço para serem alcançadas */
-.project-section {
-    scroll-margin-top: 100px;
-    min-height: 90px; /* Garante que a seção exista visualmente */
+:root {
+    --azul-adulto: #2196f3;
+    --verde-adolescente: #4caf50;
+    --amarelo-crianca: #ffeb3b;
+    --vermelho-idoso: #f44336;
 }
 
+/* --- 2. Wrappers e Containers --- */
 .projects-wrapper {
-    width: 90%;
-    max-width: 900px;
+    width: 95%;
+    max-width: 1000px;
     margin: 100px auto;
     display: flex;
     flex-direction: column;
-    gap: 60px; /* Espaço entre as seções */
+    gap: 60px;
 }
 
 .project-section {
-    padding: 40px;
-    padding-top: 10px;
+    padding: 30px 15px; 
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra para dar profundidade */
-    /* Offset para a rolagem não cobrir o topo do título se houver header fixo */
-    scroll-margin-top: 100px; 
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    scroll-margin-top: 100px;
+    overflow: hidden;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* --- 3. Textos e Alinhamento Superior --- */
+.text-column {
+    width: 100%;
+    padding: 0 10px;
 }
 
 .project-title {
     font-size: 1.8rem;
+    color: #333;
+    margin-top: 0 !important; 
     margin-bottom: 20px;
-    border-bottom: 2px solid #f4f4f4;
+    padding-top: 0 !important;
     padding-bottom: 15px;
+    border-bottom: 2px solid #f4f4f4;
+    line-height: 1.1;
 }
 
-.project-content {
+.text-column p {
+    margin-top: 10px;
     text-align: justify;
+    line-height: 1.6;
+}
+
+/* --- 4. Slider e Molduras --- */
+.image-column {
+    width: 100%;
+}
+
+.instagram-slider {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.slides-wrapper {
+    display: flex;
+    height: 100%;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide { min-width: 100%; height: 100%; }
+.slide img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- 5. Controles (Com Efeito Smooth ao Pausar) --- */
+.slider-controls {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+    /* Transição suave para opacidade */
+    transition: opacity 0.2s ease-in-out, visibility 0.4s;
+    opacity: 1;
+}
+
+/* Efeito suave ao pressionar */
+.instagram-slider.paused .slider-controls { 
+    opacity: 0; 
+    visibility: hidden;
+    pointer-events: none; 
+}
+
+.progress-bar { width: 30px; border-radius: 2px; height: 3.5px; background: rgba(255,255,255,0.3); }
+.progress-fill { border-radius: 2px; height: 100%; background: #fff; width: 0%; }
+
+.dots-container { display: flex; gap: 6px; }
+.dot { 
+    width: 6px; 
+    height: 6px; 
+    background: rgba(255,255,255,0.4); 
+    border-radius: 50%; 
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dot.active { 
+    background: #fff; 
+    transform: scale(1.3); 
+}
+
+/* Cores das Seções */
+.color-adulto .color-offset-bg { background: var(--azul-adulto); }
+.color-adolescente .color-offset-bg { background: var(--verde-adolescente); }
+.color-crianca .color-offset-bg { background: var(--amarelo-crianca); }
+.color-idoso .color-offset-bg { background: var(--vermelho-idoso); }
+
+/* --- 6. "Ler Mais" --- */
+.extra-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-in-out, opacity 0.4s; /* Aumentei um pouco o tempo para ficar mais suave */
+    opacity: 0;
+}
+
+.extra-content.active { 
+    /* Alterado de 400px para 2000px para garantir que textos longos caibam */
+    max-height: 2000px; 
+    opacity: 1; 
+    margin-top: 15px; 
+}
+
+.read-more-btn { 
+    background: none; 
+    border: none; 
+    color: #272727; 
+    font-weight: 550; 
+    cursor: pointer; 
+    padding: 2px 0; 
+    text-decoration: none; 
+    position: relative; /* Necessário para posicionar a linha */
+    display: inline-block; /* Garante que a linha tenha a largura do texto */
+}
+
+/* Criando a linha invisível no estado normal */
+/* --- 6. "Ler Mais" (Padronização da Linha) --- */
+.read-more-btn::after {
+    content: "";
+    position: absolute;
+    width: 0; 
+    height: 2.5px; /* Aumentar levemente para 2.5px ou 3px ajuda a evitar o efeito de "sumir" */
+    bottom: -2px;  /* Descer um pouco mais a linha para não encostar na letra */
+    left: 50%; 
+    background-color: #272727; 
+    transition: all 0.2s ease-in-out;
+    transform: translateX(-50%);
+    
+    /* ADICIONE ESTA LINHA ABAIXO: */
+    backface-visibility: hidden; /* Ajuda o navegador a renderizar melhor a animação */
+}
+
+/* Efeito ao passar o mouse: a linha expande para 100% */
+.read-more-btn:hover::after {
+    width: 100%;
+}
+/* ============================================================
+   RESPONSIVO E DESKTOP
+   ============================================================ */
+
+/* --- 7. Mobile (Responsivo Clean) --- */
+.color-offset-bg { display: none; }
+.slider-frame {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: none;
+}
+
+.instagram-slider {
+    margin-left: -15px; 
+    margin-right: -15px; 
+    width: calc(100% + 30px); 
+}
+
+/* --- 8. Desktop (Computador) --- */
+@media (min-width: 800px) {
+    .project-section {
+        padding: 50px 40px;
+    }
+
+    .project-container { 
+        flex-direction: row; 
+        align-items: flex-start;
+        gap: 60px; 
+    }
+
+    .image-column { flex: 0 0 340px; }
+
+    /* Fundo Colorido: Aumentado 15px para a direita e para baixo */
+    .color-offset-bg {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -2px;
+        width: calc(100% + 10px); 
+        height: calc(100% + 12px);
+        z-index: 1;
+        border-radius: 0;
+    }
+
+    .slider-frame {
+        position: relative;
+        z-index: 5; 
+        top: -15px; 
+        left: -18px; 
+        border: 6px solid #000;
+        box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+        background: #000;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .instagram-slider {
+        margin: 0;
+        width: 100%;
+        max-width: 450px;
+    }
 }
 
 /*
@@ -590,7 +808,7 @@ contatos
     transform: translateY(-2px);
 }
 
-@media (max-width: 845px) {
+@media (max-width: 800px) {
     .navbar {
         width: 100%;       /* Ocupa toda a largura */
         max-width: none;   /* Remove o limite de 800px que colocamos antes */
@@ -620,7 +838,7 @@ contatos
         padding-left: 6px;
     }
     .projects-wrapper {
-        margin: 50px auto;
+        margin: 0px auto;
     }
     .project-section {
         text-align: left;
@@ -629,6 +847,14 @@ contatos
     .container {
         padding: 0 20px;
         margin: 0 auto;
+    }
+    
+    .image-column img {
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2); 
+
+        width: 100%;
+        display: block;
+        margin: 20px 0;
     }
 
     h1 {
@@ -678,7 +904,7 @@ contatos
 
     h1 {
 
-        font-size: 1.3rem;
+        font-size: 1.rem;
 
     }
 
