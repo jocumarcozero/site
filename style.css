@@ -572,7 +572,7 @@ contatos
     position: relative;
     /* Adicione sua imagem aqui */
     background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
-                      url('sua-imagem-horizontal.jpg'); 
+                      url('imagens/imagem2.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Efeito parallax opcional, fica bem moderno */
