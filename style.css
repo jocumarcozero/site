@@ -33,8 +33,8 @@ cabeçalho
     /* Define a largura do bloco no computador */
     width: 90%; 
     max-width: 800px; /* Limita o tamanho para não esticar demais em telas grandes */
-    z-index: 4;
-    
+    z-index: 99999;
+
     display: flex;
     justify-content: center;
     align-items: center;
