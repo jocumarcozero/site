@@ -1,4 +1,3 @@
-/* --- Configurações de Base --- */
 body {
     font-family: 'Public Sans', sans-serif;
     margin: 0;
@@ -40,7 +39,7 @@ cabeçalho
     align-items: center;
     z-index: 1000;
     
-    background-color: #191919f1;
+    background-color: #1a1a1a;
     padding: 15px 0;
     border-radius: 8px; /* Arredonda as bordas para o visual delimitado */
     box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
