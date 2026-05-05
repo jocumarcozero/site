@@ -33,6 +33,7 @@ cabeçalho
     /* Define a largura do bloco no computador */
     width: 90%; 
     max-width: 800px; /* Limita o tamanho para não esticar demais em telas grandes */
+    z-index: 4;
     
     display: flex;
     justify-content: center;
@@ -238,7 +239,7 @@ h1 {
     right: 0;             /* ALINHAMENTO: a borda direita do menu cola na direita do botão */
     
     background-color: #ffffff;
-    z-index: 9999;
+    z-index: 3;
     border-radius: 12px;
     display: none; 
     flex-direction: column;
