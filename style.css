@@ -116,7 +116,7 @@ h1 {
     margin-bottom: 35px;
     color: #1a1a1a;
     display: flex;
-    
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     justify-content: center;
     align-items: baseline; /* Alinha o texto e a imagem pela linha de base */
 }
