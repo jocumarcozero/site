@@ -33,8 +33,7 @@ cabeçalho
     /* Define a largura do bloco no computador */
     width: 90%; 
     max-width: 800px; /* Limita o tamanho para não esticar demais em telas grandes */
-    z-index: 99999;
-
+    z-index: 4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,7 +109,7 @@ introdução
 
 h1 {
     text-align: center;
-    font-weight: 550;
+    font-weight: 580;
     font-size: 3rem;
     margin-top: 55px;
     margin-bottom: 35px;
@@ -855,57 +854,10 @@ contatos
 }
 
 @media (max-width: 800px) {
-    .navbar {
-        width: 100%;       /* Ocupa toda a largura */
-        max-width: none;   /* Remove o limite de 800px que colocamos antes */
-        top: 0;            /* Cola no topo da tela */
-        border-radius: 0;  /* Remove as bordas arredondadas */
-        left: 0;           /* Reseta a posição */
-        transform: none;   /* Remove o efeito de centralização do desktop */
-        padding: 15px 0;
-    }
-
-    .nav-links {
-        gap: 15px;         /* Reduz o espaço entre os links no celular */
-        justify-content: center;
-        width: 100%;
-    }
-
-    .nav-links a {
-        font-size: 0.8rem; /* Ajuste leve para caber melhor no celular */
-    }
-
-    /* Se quiser esconder as linhas no celular como na imagem */
-    .nav-links a::after {
-        display: none;
-    }
-
-    .image-area {
-        padding-left: 5px;
-    }
-    .projects-wrapper {
-        margin: 60px auto;
-    }
-    .project-section {
-        text-align: left;
-    }
-
-    .container {
-        padding: 0 20px;
-        margin: 0 auto;
-    }
-    
-    .image-column img {
-        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2); 
-
-        width: 100%;
-        display: block;
-        margin: 20px 0;
-    }
 
     h1 {
         font-size: 2rem;
-        margin-top: 13px;
+        margin-top: 35px;
         margin-bottom: 25px;
     }
 
@@ -946,18 +898,64 @@ contatos
     }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 600px) {
+
+    .navbar {
+        width: 100%;       /* Ocupa toda a largura */
+        max-width: none;   /* Remove o limite de 800px que colocamos antes */
+        top: 0;            /* Cola no topo da tela */
+        border-radius: 0;  /* Remove as bordas arredondadas */
+        left: 0;           /* Reseta a posição */
+        transform: none;   /* Remove o efeito de centralização do desktop */
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        gap: 15px;         /* Reduz o espaço entre os links no celular */
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem; /* Ajuste leve para caber melhor no celular */
+    }
+
+    /* Se quiser esconder as linhas no celular como na imagem */
+    .nav-links a::after {
+        display: none;
+    }
+
+    .image-area {
+        padding-left: 4px;
+    }
+    .projects-wrapper {
+        margin: 60px auto;
+    }
+    .project-section {
+        text-align: left;
+    }
+
+    .container {
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    
+    .image-column img {
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2); 
+
+        width: 100%;
+        display: block;
+        margin: 20px 0;
+    }
 
     h1 {
-
-        font-size: 1.5rem;
-
+        font-size: 1.7rem;
+        margin-top: 5px;
+        margin-bottom: 25px;
     }
 
     .title-icon {
-
         top: 4px;
-
     }
 
     .nav-links a {
@@ -996,4 +994,15 @@ contatos
     box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
     /* Pequeno "pulo" para cima */
     transform: translateY(-3px);
+}
+
+@media (max-width: 300px) {
+
+    h1 {
+        font-size: 1.3rem;
+    }
+    .title-icon {
+        top: 3px;
+    }
+
 }
